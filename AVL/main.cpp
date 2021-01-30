@@ -94,7 +94,6 @@ void displayTree(Elem *root) { //print the tree
       avl * balance(avl *);
       avl * insert(avl*, int);
       void show(avl*, int);
-      void inorder(avl *);
       void preorder(avl *);
       void postorder(avl*);
       avl_tree() {
@@ -190,13 +189,7 @@ void avl_tree::show(avl *p, int l) {
          show(p->l, l + 1);
    }
 }
-void avl_tree::inorder(avl *t) {
-   if (t == NULL)
-      return;
-      inorder(t->l);
-      cout << t->d << " ";
-      inorder(t->r);
-}
+
 void avl_tree::preorder(avl *t) {
    if (t == NULL)
       return;
@@ -253,8 +246,8 @@ int main() {
       cout<<"2. Display"<<endl;
       cout<<"3. DestructCode"<<endl;
       cout<<"4. ConvertTree"<<endl;
-      cout<<"5.show Balanced AVL Tree" << endl;
-      cout<<"6.InOrder traversal" << endl;
+      cout<<"5. Show Balanced AVL Tree" << endl;
+      cout<<"6. Exit"<< endl;
       cout<<"Enter Your Choice: ";
       cin>>c;
       //perform switch operation
@@ -293,11 +286,6 @@ int main() {
             cout<<endl;
             break;
         case 6:
-            cout << "Inorder Traversal:" << endl;
-            avl.inorder(r);
-            cout << endl;
-            break;
-        case 7:
             exit(1);
         default:
             cout<<"\nInvalid type! \n";
